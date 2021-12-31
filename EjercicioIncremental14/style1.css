@@ -1,0 +1,30 @@
+body{
+    background-color:  #ccffff;
+}
+.navbar{
+    text-align: center;
+}
+.card{
+    margin-top: 3%;
+    height: auto;
+    background-color: #79c9c9;
+    text-align: center;
+    padding-bottom: 3%;
+}
+#logote{
+    width: 60%;
+    margin: 20%;
+    margin-top: 5%;
+    align-self: center;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ccffff;
+    margin-bottom: 0;
+}
+.titulo{
+    font-size: 250%;
+    font-weight: 900;
+}
+a{
+    color: white;
+}
