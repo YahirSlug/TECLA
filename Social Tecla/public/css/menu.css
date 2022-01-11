@@ -1,0 +1,37 @@
+.container{
+    margin-top: 5%;
+
+}
+.row{
+    justify-content: space-between;
+}
+body{
+    background-color:  #b1f3f3;
+}
+.boton{
+    border-radius: 10px;
+    background-color: rgb(55, 214, 214);
+    border:3px solid rgb(211, 211, 211);
+    color: blue;
+}
+.boton:active{
+    color: white;
+    background-color: darkgray;
+    border:3px solid #ccffff;
+}
+#foto {
+    border-radius: 50%;
+}
+#foto4 {
+    border-radius: 50%;
+}
+#foto3 {
+    border-radius: 50%;
+}
+#foto2 {
+    border-radius: 50%;
+}
+.container{
+border-radius: 10%;
+border-color: blue;
+}

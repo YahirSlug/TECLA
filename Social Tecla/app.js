@@ -1,73 +1,115 @@
-cargar()
+const express = require("express");
+const app = express();
+require("dotenv").config(); //dotenv 
 
-function cargar(){
-  loadDoc()
-  loadDoc2()
-  loadDoc3()
-  loadDoc4()
-  text()
+
+//////capturadora de datos
+app.use(express.urlencoded({extended:false}));
+app.use(express.json()); 
+
+
+//recursos
+app.use('/resources', express.static('public'))
+app.use ('/resources', express.static(__dirname+'/public'))
+
+
+app.set('view engine','ejs');
+
+const bcryptjs = require("bcryptjs");
+
+
+//session
+const session = require("express-session");
+app.use(session({
+
+    secret: 'secret',
+    resave: true,
+    saveUninitialized:true
+
+}))
+
+//////////////////////DATABASE//////////////////////
+// , {msg: "test o. o"}
+const connection = require ('./db/database');
+const { send } = require("express/lib/response");
+
+    app.get('/',(req,res)=>{
+    res.send('INICIA SESION PRIMERO');
+    })
+
+    app.get('/login',(req,res)=>{
+        res.render('login');
+        })
+        
+        app.get('/register',(req,res)=>{
+            res.render('register');
+            })
+
+
+app.post('/register', async(req,res)=>{
+const user = req.body.user;
+const name = req.body.name;
+const rol = 'default_user';
+const pass = req.body.pass;
+let passwordHaash = await bcryptjs.hash(pass,8);
+connection.query('INSERT INTO users SET?',{user:user,name:name,rol:rol,pass:passwordHaash}, async(error,results)=>{
+    if (error){
+        console.log(error);
+    }
+    else{
+    
+        res.render('register',{
+     
+alert: true,
+alertTitle: "Registration",
+alertMessage: "Succeful Registration",
+alertIcon: 'sucess',
+showConfirmButton:false,
+timer:1500,
+ruta:''
+        })
+    }
+
+})
+
+})
+
+
+
+app.post("/auth",async(req,res)=>{
+const user = req.body.user;
+const pass = req.body.pass;
+let passwordHaash = await  bcryptjs.hash(pass, 8);
+
+if(user && pass){
+connection.query('SELECT * FROM users WHERE user =?',[user], async(error,results)=>{
+
+if(results.lenght==0||!(await bcryptjs.compare(pass, results[0].pass) )){
+res.send("Usuario o password incorrecta")
+
+}
+else{ 
+    res.send("LOGIN correcto")
+
+
 }
 
-function text() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function aver() {
-      let jeison = JSON.parse(this.responseText)
-      let indice = Math.floor((Math.random() * (41 - 0 + 1)) + 0);
-      document.getElementById("frase1").innerHTML = jeison[indice].cita;
-      indice = Math.floor((Math.random() * (41 - 0 + 1)) + 0);
-      document.getElementById("frase2").innerHTML = jeison[indice].cita;
-      indice = Math.floor((Math.random() * (41 - 0 + 1)) + 0);
-      document.getElementById("frase3").innerHTML = jeison[indice].cita;
 
-    }
-    xhttp.open("GET", "https://raw.githubusercontent.com/bitgary/hola-mundo/master/citas.json");
-    xhttp.send();
-  }
-function loadDoc() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function aver() {
-      let jeison = JSON.parse(this.responseText)
-      document.getElementById("nombrePer").innerHTML =  jeison.results[0].name.title + ". " +jeison.results[0].name.first +" "+ jeison.results[0].name.last;
-      document.getElementById("pais").innerHTML = jeison.results[0].location.city + ", " + jeison.results[0].location.country;
-      document.getElementById("nacimiento").innerHTML = jeison.results[0].dob.age + " años";
-      document.getElementById("foto").src = jeison.results[0].picture.large;
-      document.getElementById("mail").innerHTML = jeison.results[0].email;
-      document.getElementById("telefonof").innerHTML = "Tel: " + jeison.results[0].phone
-      document.getElementById("empresa").innerHTML = jeison.results[0].nat;
-    }
-    xhttp.open("GET", "https://randomuser.me/api/");
-    xhttp.send();
-  }
-  function loadDoc2() {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onload = function aver() {
-        let jeison = JSON.parse(this.responseText)
-        document.getElementById("nombrePer2").innerHTML = jeison.results[0].name.first +" "+ jeison.results[0].name.last;
-        document.getElementById("foto2").src = jeison.results[0].picture.thumbnail;
-  
-      }
-      xhttp.open("GET", "https://randomuser.me/api/");
-      xhttp.send();
-    }
-    function loadDoc3() {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function aver() {
-          let jeison = JSON.parse(this.responseText)
-          document.getElementById("nombrePer3").innerHTML = jeison.results[0].name.first +" "+ jeison.results[0].name.last;
-          document.getElementById("foto3").src = jeison.results[0].picture.thumbnail;
+})
+
+}})
+
+
+
+
+
+
+
+app.listen(3000,(req,res)=>{
+
     
-        }
-        xhttp.open("GET", "https://randomuser.me/api/");
-        xhttp.send();
-      }
-      function loadDoc4() {
-          const xhttp = new XMLHttpRequest();
-          xhttp.onload = function aver() {
-            let jeison = JSON.parse(this.responseText)
-            document.getElementById("nombrePer4").innerHTML = jeison.results[0].name.first +" "+ jeison.results[0].name.last;
-            document.getElementById("foto4").src = jeison.results[0].picture.thumbnail;
-      
-          }
-          xhttp.open("GET", "https://randomuser.me/api/");
-          xhttp.send();
-        }
+console.log("Server running in http://localhost:3000")
+
+
+})
+

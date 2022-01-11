@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/910968996650713178/912440990307065896/Tecla.jpg"/>
+    <title>Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/profile.css">
+
+</head>
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #79c9c9;">
+        <div class="container-fluid">            
+          <img src="https://media.discordapp.net/attachments/910968996650713178/912440990307065896/Tecla.jpg" alt="" width="50" height="50" class="d-inline-block align-text-top"/>
+  
+          <a class="navbar-brand" href="./index(5).html">SOCIAL TECLA 2021!</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index(2).html">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mensajes <span class="badge bg-secondary">4</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notificaciones</a>
+              </li>
+            </ul>
+          </div>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Configuración
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="./index(2).html">Editar Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuracion</a></li>
+              <li><a class="dropdown-item" href="#">Privacidad</a></li>
+              <li><a class="dropdown-item" href="#">Ayuda y Soporte</a></li>
+              <li><a class="dropdown-item" href="./index(1).html">Cerrar Sesion</a></li>
+            </ul>
+          </div>
+          </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="card col-12" id="Info" >
+                <div class="row ">
+                    <div class="col-md-4">
+                      <input type="image" src="https://media.discordapp.net/attachments/910968996650713178/912469013446164500/images.png" class="card-img-top" alt="Importar Imagen">
+                    </div>
+                <div class="col-md-8">
+                    </br>
+                    </br>
+                    <div class="card-body ">
+                        <div class="form-floating mb-3">
+                            <input type="Nombre" class="form-control" id="floatingInput" placeholder="Nombre">
+                            <label for="floatingInput">Nombre</label>
+                        </div>                  
+                        <select class="form-select " aria-label="Default select example">
+                            <option selected>Pais</option>
+                            <option value="1">México</option>
+                            <option value="2">Paraguay</option>
+                            <option value="3">Johto</option>
+                            <option value="4">Alemania</option>
+                            <option value="5">Chad</option>
+                            <option value="6">Atlantis</option>
+                            <option value="7">Antartica</option>
+                            <option value="8">Wakanda</option>
+                            <option value="9">Australia</option>
+                            <option value="10">China</option>
+                          </select></br>
+                        <label for="cumple">Cumpleaños</label>
+                        <input class="datepicker" type="date" name="Cumpleaños" id="cumple"></br>
+                        </br>
+                        <select class="form-select"  aria-label="Default select example">
+                            <option selected>Escuela</option>
+                            <option value="1">Tecla/Coding Academy</option>
+                            <option value="2">Harvard</option>
+                            <option value="3">Universidad Nacional Autonoma de México</option>
+                            <option value="4">Hogwarts School of Witchcraft and Wizardry</option>
+                            <option value="5">Springfield Elementary</option>
+                            <option value="6">Beauxbatons Academy of Magic</option>
+                            <option value="7">Umbrella Academy</option>
+                            <option value="8">Monsters University</option>
+                            <option value="9">Dentech Academy</option>
+                            <option value="10">Durmstrang Institute for Magical Learning</option>
+                        </select></br>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="row" id="hor">
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Lunes</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                    <label for="lun" class="subt">Vespertino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Soy tan optimista que no digo lunes, digo pre pre pre pre viernes."
+                </div>
+            </div>
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Martes</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                    <label for="lun" class="subt">Vespertino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Los martes son increíbles; son una agradable señal de que hemos sobrevivido a los tan pesados lunes."
+                </div>
+            </div>
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Miercoles</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                    <label for="lun" class="subt">Vespertino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Feliz miércoles y recuerda: Al que madruga, nadie le hace el desayuno."
+                </div>
+            </div>
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Jueves</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                    <label for="lun" class="subt">Vespertino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Nada te arruina tanto un viernes como descubrir que en realidad es jueves."
+                </div>
+            </div>
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Viernes</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                    <label for="lun" class="subt">Vespertino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Espero que hoy sea el viernes más viernes de todos los viernes del mundo."
+                </div>
+            </div>
+            <div class="card col-lg-2" id="horario">
+                <label for="horario" class="titulo">Sabado</label>
+                <ul class="list-group list-group-flush">
+                    </br>
+                    <label for="lun" class="subt">Matutino</label>
+                    </br>
+                    Inicio
+                    <input type="time" name="lunes" id="lun">
+                    Fin
+                    <input type="time" name="lunes" id="lun">
+                    </br>
+                </ul>
+                <div class="card-footer">
+                    "Si el cuerpo pide fiesta, dásela porque la necesita. Si no la pide, oblígalo, porque él no se manda solo."
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

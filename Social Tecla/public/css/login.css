@@ -1,0 +1,125 @@
+body{
+    background-color:  #a4f0c0;
+    background-image: url("https://cdn.discordapp.com/attachments/832055594096787466/930139765540532234/image.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.navbar{
+    text-align: center;
+}
+.card{
+    margin: auto;
+    border-radius: 10%;
+    margin-top: 3%;
+    height: auto;
+    background-color: rgb(121, 201, 201);
+    text-align: center;
+    padding-bottom: 3%;
+}
+#logote{
+    width: 25%;
+    margin: 20%;
+    margin-top: 5%;
+    align-self: center;
+    height: auto; 
+    border-radius: 50%;
+    border: 3px solid #ccffff;
+    margin-bottom: 0;
+}
+.titulo{
+    font-size: 250%;
+    font-weight: 900;
+}
+a{
+    color: white;
+}
+
+.form-control{
+
+    border-radius: 15px;
+background-color:honeydew ;
+}
+
+#login {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    /* box-shadow: 0 9px #999; */
+ -webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
+  }
+  
+  #login:hover {background-color: #3e8e41}
+  
+  #login:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+}
+
+/* ///////////////////////////////////////////////////////////////// */
+#cancel {
+    
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #af4c4c;
+    border: none;
+    border-radius: 15px;
+    /* box-shadow: 0 9px #999; */
+ -webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
+  }
+  
+  #cancel:hover {background-color: #4d2121}
+  
+  #cancel:active {
+    background-color: #8e3e3e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #blue{
+
+color:blue;
+
+ }
+
+ #blue:hover {color: #ff0000}
+
