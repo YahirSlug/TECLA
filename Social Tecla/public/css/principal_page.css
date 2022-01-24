@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+body{
+    font-family: 'Fredoka One', cursive;
+   background-color: #F4F5F7;
+}
+
+nav{
+    background-color: #FFF;
+}
+
+.navbar-blue{
+    color: #0055FF;
+
+}
+.navbar-brand{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+}
+.green{
+    color: #10D875;
+}
+
+.gray{
+    color: #878787;
+    font-weight: lighter;
+    text-decoration: none;
+
+}
+
+.card{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.card-title{
+    font-size: 12px;
+    text-align: left;
+}
+
+
+.card-img-top{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+.circle-icons{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.blue-back{
+    background: rgb(4,114,227);
+    background: linear-gradient(90deg, rgba(4,114,227,1) 0%, rgba(2,32,128,1) 100%);
+
+}
+.orange-back {
+    background: rgb(228,79,39);
+    background: linear-gradient(90deg, rgba(228,79,39,1) 0%, rgba(240,102,40,1) 100%);
+}
+.yellow-back {
+    background: rgb(242,155,75);
+    background: linear-gradient(90deg, rgba(242,155,75,1) 0%, rgba(244,198,78,1) 100%);
+
+}
+
+.white-back {
+    background:white;
+    color: #ACB5BE;
+}
+
+
+.list-group-item{
+    border: none;
+}
+
+
+.container{
+    margin-top: 5%;
+
+}
+.row{
+    justify-content: space-between;
+}
+body{
+    background-color:  #b1f3f3;
+}
+.boton{
+    border-radius: 10px;
+    background-color: rgb(55, 214, 214);
+    border:3px solid rgb(211, 211, 211);
+    color: rgb(255, 255, 255);
+}
+.boton:active{
+    color: white;
+    background-color: darkgray;
+    border:3px solid #ccffff;
+}
+#foto-c {
+    border-radius: 50%;
+}
+
+.container{
+border-radius: 10%;
+border-color: blue;
+}

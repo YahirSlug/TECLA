@@ -85,19 +85,41 @@ if(user && pass){
 connection.query('SELECT * FROM users WHERE user =?',[user], async(error,results)=>{
 
 if(results.lenght==0||!(await bcryptjs.compare(pass, results[0].pass) )){
-res.send("Usuario o password incorrecta")
+    res.render('login',{
+        alert: true,
+        alertTitle: "Error",
+        alertMessage: "Usuario o paswword incorrecta",
+        alertIcon: "error",
+        showConfirmButton: true,
+        timer:false,
+        ruta:'login'
+        }
+        
 
+
+)
 }
-else{ 
-    res.send("LOGIN correcto")
-
+else{
+    req.session.name = results[0].name 
+    res.render('login',{
+   
+        alert: true,
+        alertTitle: "Conexion exitosa",
+        alertMessage: "Login correcto",
+        alertIcon: "sucess",
+        showConfirmButton: false,
+        timer:1500,
+        ruta:''
+        })
+}
+})
+}else{
+res.send('por favor ingrese todos los datos')
 
 }
 
 
 })
-
-}})
 
 
 
