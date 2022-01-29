@@ -15,8 +15,6 @@ app.use ('/resources', express.static(__dirname+'/public'))
 
 app.set('view engine','ejs');
 
-const bcryptjs = require("bcryptjs");
-
 
 //session
 const session = require("express-session");
@@ -31,11 +29,7 @@ app.use(session({
 //////////////////////DATABASE//////////////////////
 // , {msg: "test o. o"}
 const connection = require ('./db/database');
-const { send } = require("express/lib/response");
-
-    app.get('/',(req,res)=>{
-    res.send('INICIA SESION PRIMERO');
-    })
+const { send, render } = require("express/lib/response");
 
     app.get('/login',(req,res)=>{
         res.render('login');
@@ -47,14 +41,26 @@ const { send } = require("express/lib/response");
 
 
 app.post('/register', async(req,res)=>{
-const user = req.body.user;
-const name = req.body.name;
-const rol = 'default_user';
+const email = req.body.email;
 const pass = req.body.pass;
-let passwordHaash = await bcryptjs.hash(pass,8);
-connection.query('INSERT INTO users SET?',{user:user,name:name,rol:rol,pass:passwordHaash}, async(error,results)=>{
+const name = req.body.name;
+const country = req.body.country;
+const last_name = req.body.last_name;
+connection.query('INSERT INTO users SET?',{
+    email:email,pass:pass,name:name,last_name:last_name,country:country
+}, async(error,results)=>{
     if (error){
-        console.log(error);
+        res.render('register',{
+     
+            alert: false,
+            alertTitle: "Registration",
+            alertMessage: "Error de registro",
+            alertIcon: 'error',
+            showConfirmButton:false,
+            timer:1500,
+            ruta:'register'
+                    })
+
     }
     else{
     
@@ -66,7 +72,7 @@ alertMessage: "Succeful Registration",
 alertIcon: 'sucess',
 showConfirmButton:false,
 timer:1500,
-ruta:''
+ruta:'login'
         })
     }
 
@@ -77,30 +83,28 @@ ruta:''
 
 
 app.post("/auth",async(req,res)=>{
-const user = req.body.user;
-const pass = req.body.pass;
-let passwordHaash = await  bcryptjs.hash(pass, 8);
+    const email = req.body.email;
+    const pass = req.body.pass;
+if(email && pass){
+connection.query('SELECT * FROM users WHERE email =?',[email], async(error,results)=>{
 
-if(user && pass){
-connection.query('SELECT * FROM users WHERE user =?',[user], async(error,results)=>{
-
-if(results.lenght==0||!(await bcryptjs.compare(pass, results[0].pass) )){
+if(!results||pass!=results[0].pass){
     res.render('login',{
         alert: true,
-        alertTitle: "Error",
-        alertMessage: "Usuario o paswword incorrecta",
+        alertTitle: "Usuario o paswword incorrecta",
+        alertMessage: "Error",
         alertIcon: "error",
-        showConfirmButton: true,
-        timer:false,
+        showConfirmButton: false,
+        timer:1500,
         ruta:'login'
         }
-        
-
-
+ 
 )
 }
 else{
-    req.session.name = results[0].name 
+    req.session.loggedin = true;
+    req.session.name = results[0].name
+
     res.render('login',{
    
         alert: true,
@@ -111,15 +115,38 @@ else{
         timer:1500,
         ruta:''
         })
+       
+       
 }
 })
 }else{
 res.send('por favor ingrese todos los datos')
 
+
+
+
+
 }
 
 
 })
+
+
+app.get('/',(req,res)=>{
+
+
+res,render('principal_page',{
+login: true,
+name: req.session.name 
+}
+
+
+
+
+)})
+
+
+
 
 
 
