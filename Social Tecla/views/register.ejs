@@ -42,21 +42,28 @@
 
                             <!-- REGISTER -->
                     <form action="/register" method="POST">
+                        
                         <div class="mb-3">
-                            <label for="user">Username</label>
-                            <input type="text" name='user' class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="user">Full name</label>
+                            <label for="user">Nombre</label>
                             <input type="text" name='name' class="form-control" required>
                         </div>
   
                         <div class="mb-3">
-                            <label for="pass">Password</label>
+                            <label for="user">Apellidos</label>
+                            <input type="text" name='last_name' class="form-control" required>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="user">Email</label>
+                            <input type="email" name='email' class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user">Password</label>
                             <input type="password" name='pass' class="form-control" required>
-                        </div >
-                     
+                        </div>
+  
+          
                         <!-- <div class="mb-3">
                             <label for="rol">Rol</label>
                             <select name="rol" id ="rol" class="select">

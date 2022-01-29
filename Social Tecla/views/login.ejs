@@ -39,18 +39,17 @@
                     <img id="logote" src="https://media.discordapp.net/attachments/910968996650713178/912440990307065896/Tecla.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top"/>
                     <p class="titulo">Welcome Tecler</p> 
 
-                            <!-- LOGIN -->
+                          
                     <form action="/auth" method="POST">
                         <div class="mb-3">
                             <!-- <label for="exampleInputEmail1" class="form-label">Usuario o e-mail</label> -->
-                            <input type="text" name='user' class="form-control" placeholder="User" required>
+                            <input type="email" name='email' class="form-control" placeholder="User" required>
                         </div>
                         <div class="mb-3">
                             <!-- <label for="exampleInputPassword1" class="form-label">Contraseña</label> -->
                             <input type="password" name="pass" class="form-control" id="pass" placeholder="Password" required>
                         </div>
                       <input type="submit" class="btn-login" value="Login" id="login">
-
                       </form><br>
                       <p>No account?  <a href="register" class="btn-register" id="blue">Register</a></p>
                            <!-- Cuandoe estabamos escribiendo esto hacia mucho fruio -->
@@ -59,6 +58,23 @@
         </div>
     </div>
     
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <%if(typeof alert != "undefined"){%>
+        <script>
+Swal.fire({
+  title:  '<%= alertTitle %>',
+  icon: '<%= alertMessage %>',
+  text: '<%= alertIcon %>',
+  showConfirmButton: '<%= showConfirmButton %>',
+  timer: '<%= timer %>'
+}).then(()=>{
+
+window.location='/<%= ruta %>'
+
+})
+
+        </script>
+<% } %>
 
 
 </body>
